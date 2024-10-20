@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 
 function RegisterForm({ onAddUser }) {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    username: '',
     email: '',
     password: '',
   });
@@ -15,9 +14,9 @@ function RegisterForm({ onAddUser }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.firstName && formData.email && formData.password) {
+    if (formData.username && formData.email && formData.password) {
       onAddUser(formData);
-      setFormData({ firstName: '', lastName: '', email: '', password: '' });
+      setFormData({ username: '', email: '', password: '' });
       alert('Usuário cadastrado com sucesso!');
     } else {
       alert('Preencha todos os campos obrigatórios!');
@@ -27,22 +26,13 @@ function RegisterForm({ onAddUser }) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Primeiro Nome:</label>
+        <label>Nome de usuário:</label>
         <input
           type="text"
-          name="firstName"
-          value={formData.firstName}
+          name="username"
+          value={formData.username}
           onChange={handleChange}
           required
-        />
-      </div>
-      <div>
-        <label>Sobrenome:</label>
-        <input
-          type="text"
-          name="lastName"
-          value={formData.lastName}
-          onChange={handleChange}
         />
       </div>
       <div>

@@ -8,16 +8,14 @@ function UserTable({ users }) {
         <table border="1" cellPadding="10" style={{ marginTop: '10px' }}>
           <thead>
             <tr>
-              <th>Primeiro Nome</th>
-              <th>Sobrenome</th>
+              <th>Nome de usuário</th>
               <th>Email</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user, index) => (
               <tr key={index}>
-                <td>{user.firstName}</td>
-                <td>{user.lastName}</td>
+                <td>{user.username}</td>
                 <td>{user.email}</td>
               </tr>
             ))}
